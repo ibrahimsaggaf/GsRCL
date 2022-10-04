@@ -14,7 +14,7 @@ This repository contains the implementation of GsRCL. The impelementation is bui
 The impelemtation is design to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. To run this impelementation yon need to run `python3 runner.py`.
 
 # Dataset
-The scRNA-seq datasets can be downloaded from [Zenodo](https://zenodo.org/record/3357167#.YzxZg9jMJdg).
+The scRNA-seq datasets can be downloaded from [Zenodo](https://zenodo.org/record/3357167#.YzxZg9jMJdg). The binary class labels are available in the **Binary classification tasks** folder.
 
 # Acknowledgements
 The authors acknowledge the academic research grants provided by Google Cloud. The authors also acknowledge the support by the Department of Computer Science and Information System and the Birkbeck GTA programme.
