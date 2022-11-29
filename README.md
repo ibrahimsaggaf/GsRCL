@@ -11,7 +11,52 @@ This repository contains the implementation of GsRCL. The impelementation is bui
 - numpy==1.22
 
 ## Tutorial
-The impelemtation is design to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. To run this impelementation yon need to execute `python3 runner.py`.
+The impelemtation is design to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. To run this impelementation yon just need to execute `python3 runner.py`.
+
+### The config file
+Here we provide a discription of each part in `config.py`
+
+**Dataset information**
+```
+PATH_ = The main folder (e.g. 'inter-dataset')
+DATASET = The name of the folder that includes the required dataset (e.g. 'PbmcBench_Seq-Well')
+FILE_X =  The name of File X (e.g. 'SW_pbmc1.csv')
+FILE_Y = The name of file y (e.g. 'CD4+ T cell_VR_Labels.csv')
+
+The full path of file X should be 'inter-dataset/PbmcBench_Seq-Well/SW_pbmc1.csv' 
+and file y should be 'inter-dataset/PbmcBench_Seq-Well/CD4+ T cell_VR_Labels.csv'
+```
+
+**Contrastive learning settings**
+```
+CL_LOSSES = The contrastive losses (e.g. ['simclr', 'supcon'])
+CL_AUG_METHODS = The augmentation methods (e.g. ['noise', 'random_masking'])
+CL_EPOCHS = The number of corresponding epochs for each contrastive learning paradigm (e.g. [1000, 3000])
+CL_STEP = The number of steps to measure a model validation performance (e.g. [20, 40])
+CL_BATCH_SIZE = The batch size (e.g. 8192)
+TOP_N_GENES = The selected topmost variable genes (e.g. [500, 1000, 3000, 5000])
+LAYERS = The corresponding encoder and projection head layers' sizes w.r.t. the number of variable genes
+          (e.g. [(384, 256, 128, 64), (384, 256, 128, 64), (2048, 1024, 512, 128), (2048, 1024, 512, 128)])
+          
+500 topmost genes (384, 256, 128, 64)
+1000 topmost genes (384, 256, 128, 64)
+3000 topmost genes (2048, 1024, 512, 128)
+5000 topmost genes  (2048, 1024, 512, 128)
+```
+
+**Task settings**
+```
+ID_ = A unique timestamp (e.g. str(round(time.time())))
+RESULTS_PATH = The folder to save the results in (e.g. 'results')
+CLASSIFIERS = The used classifier and its package name (e.g. [('sklearn.svm', 'SVC')])
+PARAMS_GRID = The hyperparameters used for grid search 
+              (e.g. {'SVC': {'gamma': ['scale', 0.0001, 0.001, 0.01], 'C': [0.1, 1.0, 10.0, 100.0]}})
+CV = The number of CV folds (e.g. 5)
+TRAIN_SIZE = The training set size (e.g. 0.8)
+METRIC = The main metric (e.g. 'mcc' or 'avg_precision' or 'f1')
+WORLD_SIZE = The number of GPUs (e.g. torch.cuda.device_count() or 4)
+NUM_CORES = The number of cpus for the grid search (os.cpu_count() // CV or 10)
+```
 
 ### The pipeline
 The implementation runs a pipeline with the following main steps:
