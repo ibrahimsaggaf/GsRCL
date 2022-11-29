@@ -44,4 +44,4 @@ CV = 5
 TRAIN_SIZE = 0.8
 METRIC = 'mcc'
 WORLD_SIZE = torch.cuda.device_count()
-NUM_CORES = os.cpu_count() // 2
+NUM_CORES = os.cpu_count() // CV
