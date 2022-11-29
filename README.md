@@ -31,12 +31,34 @@ self._save_results()
 `self._save_results()` This step only dumps the results collector object.
 
 ### The code
-Here we will briefly talk about each `.py` file in the code folder.
+Here we briefly describe each `.py` file in the **code** folder.
 
+`cl.py` Runs a contrastive learning paradigm (SimCLR or Supcon).
 
+`collector.py` Creates a results collector object.
+
+`config.py` The pipeline configuration file.
+
+`data.py` Reads and preprocess the given scRNA-seq dataset.
+
+`experiment_builder.py` Builds the pipeline and execut it.
+
+`losses.py` Includes the contrastive learning loss in both SimCLR and SupCon.
+
+`metrics.py` Includes the metrics adopted in this implementation: MCC, AP, and F1.
+
+`networks.py` Includes the encoder architecture.
+
+`ovr.py` This is used to conduct the one-vs-rest approach, hence, creating several binary classification tasks.
+
+`performance.py` Measures the performance in `self._benchmarking()` and `self._representations_performance()`.
+
+`utils.py` Includes some helper functions.
+
+`validators.py` Conducts model selection against the validation set.
 
 # Dataset
-The scRNA-seq datasets can be downloaded from [Zenodo](https://zenodo.org/record/3357167#.YzxZg9jMJdg). The binary class labels are available in the **Binary classification tasks** folder.
+The scRNA-seq datasets can be downloaded from [Zenodo](https://zenodo.org/record/3357167#.YzxZg9jMJdg). The binary class labels that are used in this work are available in the **Binary classification tasks** folder.
 
 # Acknowledgements
 The authors acknowledge the academic research grants provided by Google Cloud. The authors also acknowledge the support by the Department of Computer Science and Information System and the Birkbeck GTA programme.
