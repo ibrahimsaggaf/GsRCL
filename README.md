@@ -16,7 +16,7 @@ The impelemtation is design to parallelise training workloads on GPUs, hence, th
 ### The config file
 Here we provide a discription of each part in `config.py`
 
-**Dataset information**
+Dataset information
 ```
 PATH_ = The main folder (e.g. 'inter-dataset')
 DATASET = The name of the folder that includes the required dataset (e.g. 'PbmcBench_Seq-Well')
@@ -27,7 +27,7 @@ The full path of file X should be 'inter-dataset/PbmcBench_Seq-Well/SW_pbmc1.csv
 and file y should be 'inter-dataset/PbmcBench_Seq-Well/CD4+ T cell_VR_Labels.csv'
 ```
 
-**Contrastive learning settings**
+Contrastive learning settings
 ```
 CL_LOSSES = The contrastive losses (e.g. ['simclr', 'supcon'])
 CL_AUG_METHODS = The augmentation methods (e.g. ['noise', 'random_masking'])
@@ -44,7 +44,7 @@ LAYERS = The corresponding encoder and projection head layers' sizes w.r.t. the 
 5000 topmost genes  (2048, 1024, 512, 128)
 ```
 
-**Task settings**
+Task settings
 ```
 ID_ = A unique timestamp (e.g. str(round(time.time())))
 RESULTS_PATH = The folder to save the results in (e.g. 'results')
