@@ -1,6 +1,19 @@
 # GsRCL: Gaussian noise augmented scRNA-seq contrastive learning framework
 We proposed a novel cell-type identification method, namely GsRCL, which exploits the well-known Gaussian noise to augment the original gene expression profiles in order to learn contrastive learning feature representations. We investigated the performance of this Gaussian noise data augmentation method on contrastive learning and downstream supervised learning tasks. Due to its simplicity and the concern on the well-known overfitting issue, we investigated the effect of the contrastive learning-based feature extractor against the downstream classifier. The experimental results suggest that our GsRCL method successfully improved the accuracy of cell-type identification and outperformed the random genes masking data augmentation method in [contrastive-sc](https://doi.org/10.1186/s12859-021-04210-8). A further analysis reveals that the self-supervised learning-based contrastive learning framework has higher robustness than the supervised learning-based contrastive learning framework against the overfitting issue.
 
+If you find this repository helpful, please cite our work:
+```
+@article {gsrcl,
+	author = {Alsaggaf, Ibrahim and Buchan, Daniel and Wan, Cen},
+	title = {Improving cell-type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning},
+	elocation-id = {2022.10.06.511191},
+	year = {2022},
+	doi = {10.1101/2022.10.06.511191},
+	URL = {https://www.biorxiv.org/content/early/2022/10/08/2022.10.06.511191},
+	journal = {bioRxiv}
+}
+```
+
 # Usage
 This repository contains the implementation of GsRCL. The impelementation is built in Python3 using Scikit-learn, Scanpy, and the deep learning library Pytorch. 
 
