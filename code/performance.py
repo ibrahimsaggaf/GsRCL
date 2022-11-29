@@ -9,7 +9,7 @@ from metrics import pre_rec_curve, standard_error, mean_per_metric
 
 class CVPerformance:
     def __init__(self, data, folds, clfs, params_grids, metric, metrics_list, id_, 
-                 task='spl', results_collector=None, n_jobs=None):
+                 task='spl', results_collector=None):
         self.data = data
         self.folds = folds
         self.clfs = clfs
@@ -19,10 +19,6 @@ class CVPerformance:
         self.id_ = id_
         self.task = task
         self.results_collector = results_collector
-        
-        self.n_jobs = n_jobs
-        if self.n_jobs is None:
-            self.n_jobs = len(self.clfs)
         
         self.results_ = {}
 
