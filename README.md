@@ -24,7 +24,14 @@ This repository contains the implementation of GsRCL. The impelementation is bui
 - numpy==1.22
 
 ## Tutorial
-The impelemtation is design to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. To run this impelementation yon just need to execute `python3 runner.py`.
+The impelemtation is design to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. 
+
+To run this impelementation yon need to do the following:
+1. Make sure all the requirements stated above are installed.
+2. Navigate to your working directory where the `.py` files are stored (e.g. src).
+3. Move the required dataset into the working directory (e.g. src/inter-dataset/PbmcBench_Seq-Well).
+4. Modify the dataset information in the `config.py` file accordingly.
+5. Execute `python3 runner.py`.
 
 ### The config file
 Here we provide a discription of each part in `config.py`
