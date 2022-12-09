@@ -20,8 +20,8 @@ FILE_Y = 'CD4+ T cell_VR_Labels.csv'
 #Contrastive learning settings
 CL_LOSSES = ['simclr', 'supcon']
 CL_AUG_METHODS = ['noise', 'random_masking']
-CL_EPOCHS = [1000, 3000]
-CL_STEP = [20, 40]
+CL_EPOCHS = [3000, 1000]
+CL_STEP = [40, 20]
 CL_BATCH_SIZE = 8192
 TOP_N_GENES = [500, 1000, 3000, 5000]
 LAYERS = [(384, 256, 128, 64), (384, 256, 128, 64), 
