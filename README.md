@@ -51,8 +51,8 @@ Contrastive learning settings
 ```
 CL_LOSSES = The contrastive losses (e.g. ['simclr', 'supcon'])
 CL_AUG_METHODS = The augmentation methods (e.g. ['noise', 'random_masking'])
-CL_EPOCHS = The number of corresponding epochs for each contrastive learning paradigm (e.g. [1000, 3000])
-CL_STEP = The number of steps to measure a model validation performance (e.g. [20, 40])
+CL_EPOCHS = The number of corresponding epochs for each contrastive learning paradigm (e.g. [3000, 1000])
+CL_STEP = The number of corresponding steps to measure a model validation performance (e.g. [40, 20])
 CL_BATCH_SIZE = The batch size (e.g. 8192)
 TOP_N_GENES = The selected topmost variable genes (e.g. [500, 1000, 3000, 5000])
 LAYERS = The corresponding encoder and projection head layers' sizes w.r.t. the number of variable genes
