@@ -40,7 +40,7 @@ Dataset information
 ```
 PATH_ = The main folder (e.g. 'inter-dataset')
 DATASET = The name of the folder that includes the required dataset (e.g. 'PbmcBench_Seq-Well')
-FILE_X =  The name of File X (e.g. 'SW_pbmc1.csv')
+FILE_X =  The name of File X (e.g. 'SW_pbmc1.csv'), Dimensions should be cells x genes
 FILE_Y = The name of file y (e.g. 'CD4+ T cell_VR_Labels.csv')
 
 The full path of file X should be 'inter-dataset/PbmcBench_Seq-Well/SW_pbmc1.csv' 
