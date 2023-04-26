@@ -124,7 +124,7 @@ Here we briefly describe each `.py` file in the **code** folder.
 `validators.py` Conducts model selection against the validation set.
 
 # Dataset
-The scRNA-seq datasets can be downloaded from [(Abdelaal et al., 2019)](https://github.com/tabdelaal/scRNAseq_Benchmark) and [(Chen et al., 2020)](https://github.com/xuebaliang/scziDesk). The binary class labels that are used in this work are available in the **Binary classification tasks** folder.
+The scRNA-seq datasets can be downloaded from [(Abdelaal et al., 2019)](https://github.com/tabdelaal/scRNAseq_Benchmark) and [(Chen et al., 2020)](https://github.com/xuebaliang/scziDesk).
 
 # Acknowledgements
 The authors acknowledge the academic research grants provided by Google Cloud. The authors also acknowledge the support by the Department of Computer Science and Information Systems and the Birkbeck GTA programme.
