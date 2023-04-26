@@ -26,7 +26,7 @@ class ContrastiveLearning:
         self.dim_proj = dim_proj
         self.out_dim = out_dim
         self.epochs = epochs[1] if c_loss == 'supcon' else epochs[0]
-        self.step = step[1] if c_loss == 'supcon' else step[0]
+        self.step = step
         self.c_loss = c_loss
         self.batch_size = batch_size
         self.aug_method = aug_method
