@@ -9,6 +9,8 @@ import scanpy as sc
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 
+from h5 import h5_reader
+
 
 class BaseData:
     def __init__(self, file_X, file_y, dataset, path, train_size, seed, top_n_genes=None):
@@ -17,16 +19,21 @@ class BaseData:
             self.scaler = self._log_transformation
         else:
             self.scaler = self._normalise
+        
+        if file_X.endswith('.h5'):
+            self.X = self.scaler(h5_reader(Path(path, dataset, file_X)))
+        
+        else:
+            self.X = self._csv_reader(Path(path, dataset, file_X))
             
-        self.X = self._csv_reader(Path(path, dataset, file_X))
         self.y = self._csv_reader(Path(path, dataset, file_y), labels=True)
         self.dim = self.X.shape[1]
         self.train_size = train_size
         self.seed = seed
 
 
-    def _log_transformation(self, X):
-        return np.log(X + 1.0)
+    def _log_transformation(self, X, epsilon=1e-6):
+        return np.log(X + 1.0 + epsilon)
 
     
     def _normalise(self, X):
@@ -66,5 +73,3 @@ class BaseData:
                                                                               stratify=self.y)
         del self.X, self.y
 
-
- 
