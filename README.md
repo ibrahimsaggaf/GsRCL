@@ -123,7 +123,7 @@ Here we briefly describe each `.py` file in the **code** folder.
 
 `validators.py` Conducts model selection against the validation set.
 
-# Dataset
+# Data availability
 The scRNA-seq datasets can be downloaded from [(Abdelaal et al., 2019)](https://github.com/tabdelaal/scRNAseq_Benchmark) and [(Chen et al., 2020)](https://github.com/xuebaliang/scziDesk).
 
 # Acknowledgements
