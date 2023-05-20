@@ -1,5 +1,5 @@
 '''
-This code is modefied based on the impelemtation by 
+This code is modified based on the impelemtation by 
 https://github.com/ciortanmadalina/contrastive-sc
 '''
 
