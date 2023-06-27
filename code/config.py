@@ -14,7 +14,7 @@ import torch
 # Dataset information
 PATH_ = 'Binary classification tasks'
 DATASET = 'PbmcBench_Seq-Well'
-FILE_X = 'SW_pbmc1.csv'
+FILE_X = 'data.csv'
 FILE_Y = 'CD4+ T cell_VR_Labels.csv'
 
 #Contrastive learning settings
