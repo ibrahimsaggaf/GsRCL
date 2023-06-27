@@ -38,13 +38,13 @@ Here we provide a discription of each part in `config.py`
 
 Dataset information
 ```
-PATH_ = The main folder (e.g. 'inter-dataset')
+PATH_ = The main folder (e.g. 'Binary classification tasks')
 DATASET = The name of the folder that includes the required dataset (e.g. 'PbmcBench_Seq-Well')
-FILE_X =  The name of File X (e.g. 'SW_pbmc1.csv'), Dimensions should be cells x genes
+FILE_X =  The name of File X (e.g. 'data.csv'), Dimensions should be cells x genes
 FILE_Y = The name of file y (e.g. 'CD4+ T cell_VR_Labels.csv')
 
-The full path of file X should be 'inter-dataset/PbmcBench_Seq-Well/SW_pbmc1.csv' 
-and file y should be 'inter-dataset/PbmcBench_Seq-Well/CD4+ T cell_VR_Labels.csv'
+The full path of file X should be 'Binary classification tasks/PbmcBench_Seq-Well/data.csv' 
+and file y should be 'Binary classification tasks/PbmcBench_Seq-Well/CD4+ T cell_VR_Labels.csv'
 This setting is helpful when having different datasets from different sources. Otherwise, PATH_ and DATASET would be fixed.
 ```
 
