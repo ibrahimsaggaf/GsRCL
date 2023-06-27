@@ -12,7 +12,7 @@ import time
 import torch
 
 # Dataset information
-PATH_ = 'Binary classification tasks'
+PATH_ = 'Binary scRNA-seq datasets'
 DATASET = 'PbmcBench_Seq-Well'
 FILE_X = 'data.csv'
 FILE_Y = 'CD4+ T cell_VR_Labels.csv'
