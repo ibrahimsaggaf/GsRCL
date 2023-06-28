@@ -1,14 +1,6 @@
 # Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning
 Cell type identification is an important task for single-cell RNA-seq data analysis. Many prediction methods have recently been proposed, but the predictive accuracy of difficult cell type identification tasks is still low. In this work, we proposed a novel Gaussian noise augmentation-based scRNA-seq contrastive learning method (GsRCL) to learn a type of discriminative feature representations for cell type identification tasks. A large-scale computational evaluation suggests that GsRCL successfully outperformed other state-of-the-art predictive methods on difficult cell type identification tasks, whilst the conventional random genes masking augmentation-based contrastive learning method also improved the accuracy of easy cell type identification tasks in general.
 
-If you find this repository helpful, please cite our work:
-```
-@article {gsrcl,
-	author = {Alsaggaf, Ibrahim and Buchan, Daniel and Wan, Cen},
-	title = {Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning},
-}
-```
-
 # Usage
 This repository contains the implementation of GsRCL. The implementation is built in Python3 (version 3.8.10) using Scikit-learn, Scanpy, and the deep learning library Pytorch. 
 
