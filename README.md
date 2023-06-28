@@ -1,21 +1,16 @@
-# Cell-type identification is improved by single-cell RNA-seq contrastive learning
-Cell-type identification is an important task for single-cell RNA-seq (scRNA-seq) data analysis. In this work, we proposed a novel Gaussian noise augmentation-based scRNA-seq contrastive learning method (GsRCL) to learn a type of discriminative feature representations for cell-type identification tasks. A large-scale evaluation suggests that GsRCL successfully obtained state-of-the-art performance on difficult cell-type identification tasks whilst the conventional random genes masking [(Ciortan and Defrance, 2021)](https://doi.org/10.1186/s12859-021-04210-8) augmentation-based contrastive learning method also improved the accuracy of cell-type identification tasks in general.
+# Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning
+Cell type identification is an important task for single-cell RNA-seq data analysis. Many prediction methods have recently been proposed, but the predictive accuracy of difficult cell type identification tasks is still low. In this work, we proposed a novel Gaussian noise augmentation-based scRNA-seq contrastive learning method (GsRCL) to learn a type of discriminative feature representations for cell type identification tasks. A large-scale computational evaluation suggests that GsRCL successfully outperformed other state-of-the-art predictive methods on difficult cell type identification tasks, whilst the conventional random genes masking augmentation-based contrastive learning method also improved the accuracy of easy cell type identification tasks in general.
 
 If you find this repository helpful, please cite our work:
 ```
 @article {gsrcl,
 	author = {Alsaggaf, Ibrahim and Buchan, Daniel and Wan, Cen},
-	title = {Cell-type identification is improved by single-cell RNA-seq contrastive learning},
-	elocation-id = {2022.10.06.511191},
-	year = {2022},
-	doi = {10.1101/2022.10.06.511191},
-	URL = {https://www.biorxiv.org/content/early/2022/10/08/2022.10.06.511191},
-	journal = {bioRxiv}
+	title = {Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning},
 }
 ```
 
 # Usage
-This repository contains the implementation of GsRCL. The impelementation is built in Python3 (version 3.8.10) using Scikit-learn, Scanpy, and the deep learning library Pytorch. 
+This repository contains the implementation of GsRCL. The implementation is built in Python3 (version 3.8.10) using Scikit-learn, Scanpy, and the deep learning library Pytorch. 
 
 ## Requirements
 - torch==1.11.0
@@ -24,9 +19,9 @@ This repository contains the implementation of GsRCL. The impelementation is bui
 - numpy==1.22
 
 ## Tutorial
-The impelemtation is designed to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. 
+The implementation is designed to parallelise training workloads on GPUs, hence, the implementation should run on a machine with at least two GPUs. We recommend running the impelemtation on a machine with 16 cores, 60 GB memory and 4 GPUs. The `config.py` file holds all the required settings to run the implementation. 
 
-To run this impelementation yon need to do the following:
+To run this implementation yon need to do the following:
 1. Make sure all the requirements stated above are installed.
 2. Navigate to your working directory where the `.py` files are stored (e.g. src).
 3. Move the required dataset(s) into the working directory (e.g. src/inter-dataset/PbmcBench_Seq-Well).
@@ -34,7 +29,7 @@ To run this impelementation yon need to do the following:
 5. Execute `python3 runner.py`.
 
 ### The config file
-Here we provide a discription of each part in `config.py`
+Here we provide a description of each part in `config.py`
 
 Dataset information
 ```
