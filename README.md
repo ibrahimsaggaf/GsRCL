@@ -2,7 +2,7 @@
 
 This is a Python implementation of the GsRCL method reported in
 
-Alsaggaf, I. Buchan, D. and Wan, C. (2023) Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning. Under review.
+Alsaggaf, I. Buchan, D. and Wan, C. (2023) Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning.
 
 # Usage
 This repository contains the implementation of GsRCL. The implementation is built in Python3 (version 3.8.10) using Scikit-learn, Scanpy, and the deep learning library Pytorch. 
