@@ -114,7 +114,7 @@ Here we briefly describe each `.py` file in the **code** folder.
 `validators.py` Conducts model selection against the validation set.
 
 # Data availability
-The scRNA-seq datasets can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8087611.svg)](https://doi.org/10.5281/zenodo.8087611).
+The scRNA-seq datasets used in this work can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8087611.svg)](https://doi.org/10.5281/zenodo.8087611).
 
 # Acknowledgements
 The authors acknowledge the academic research grants provided by Google Cloud. The authors also acknowledge the support by the Department of Computer Science and Information Systems and the Birkbeck GTA programme.
