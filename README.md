@@ -146,18 +146,15 @@ Here we provide an example on how to identify new cells (query) using a referenc
 To identify new cells you need to do the following:
 1. Make sure all the requirements stated above are installed.
 2. Navigate to your working directory where the `.py` files are stored (e.g. src).
-3. Provide a set of query genes and their expression profiles (a sample is given in the **example** folder).
+3. Provide a set of query genes and their expression profiles (a sample is given in the **Example** folder).
 4. Execute the following script:
 ```
 from identify import Identify
-from h5 import h5_reader2
-from pathlib import Path
-import numpy as np
 
 path = The working directory (e.g. 'src')
 reference = A reference from the above table (e.g. 'Quake_10x_Bladder')
-query = The set of query genes (see the given sample 'query_genes.csv' in the example folder)
-values = The raw expression profiles (see the given sample 'query_values.csv' in the example folder)
+query = The set of query genes (see the given sample 'query_genes.csv' in the Example folder)
+values = The raw expression profiles (see the given sample 'query_values.csv' in the Example folder)
 
 obj = Identify(reference, path)
 obj.predict_proba(query, values)
@@ -171,7 +168,7 @@ Cross referencing 21143 query genes against 23341 reference genes ...
 3578 out of 23341 genes in reference are not found in query, hence 3578 genes added to query with zero values.
 Obtaining probabilities for each cell-type ...
 ```
-The script will first download the pretrained encoders for the selected reference. Then, it will cross reference the given query genes against the reference genes. After that, for each query cell a set of probabilities is obtained, where each probability is associated with a cell type in the selected reference. finally, those probabilities are saved in a CSV file (see `probabilities.csv` in the **example** folder).
+The script will first download the pretrained encoders for the selected reference. Then, it will cross reference the given query genes against the reference genes. After that, for each query cell a set of probabilities is obtained, where each probability is associated with a cell type in the selected reference. finally, those probabilities are saved in a CSV file (see `probabilities.csv` in the **Example** folder).
 
 # Acknowledgements
 The authors acknowledge the academic research grants provided by Google Cloud. The authors also acknowledge the support by the Department of Computer Science and Information Systems and the Birkbeck GTA programme.
