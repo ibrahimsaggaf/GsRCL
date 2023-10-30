@@ -75,3 +75,14 @@ def h5_reader(filename):
         X = np.array(mat.toarray())
     X = X.astype(np.float32)
     return X
+
+
+def h5_reader2(filename):
+    mat, obs, var, uns = read_data(filename, sparsify=False, skip_exprs=False)
+    if isinstance(mat, np.ndarray):
+        X = np.array(mat)
+    else:
+        X = np.array(mat.toarray())
+    X = X.astype(np.float32)
+
+    return var.index.array.astype('>30U'), X
