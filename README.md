@@ -160,7 +160,7 @@ obj = Identify(reference, path)
 obj.predict_proba(query, values)
 obj.save_results()
 ```
-The script should print out the following output:
+Given the provided samples in the **Example** folder, the script should print out the following output:
 ```
 >>> Downloading pre-trained encoders ...
 >>> Unzipping ...
