@@ -9,7 +9,7 @@ This repository contains the implementation of GsRCL. The implementation is buil
 
 ## Requirements
 - torch==1.11.0
-- scikit-learn==1.1.1
+- scikit-learn==1.3.2
 - scanpy==1.9.1
 - numpy==1.22
 
@@ -115,6 +115,63 @@ Here we briefly describe each `.py` file in the **code** folder.
 
 # Data availability
 The scRNA-seq datasets used in this work can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8087611.svg)](https://doi.org/10.5281/zenodo.8087611).
+
+# Pretrained encoders for GsRCL
+The pretrained encoders and the SVM classifiers can be downloaded from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10050548.svg)](https://doi.org/10.5281/zenodo.10050548)
+
+Here we provide an example on how to identify new cells (query) using a reference from the following table:
+
+| Reference name | Organ/tissue | Paltform | # Reference Genes | # Cell types |
+| ------------- | ------------ | -------- | ------------------ | ------------ |
+| PbmcBench_10Xv2 | PBMC | 10X Chromium v2 | 22280 | 9 |
+| PbmcBench_10Xv3 | PBMC | 10X Chromium v3 | 21905 | 8 |
+| PbmcBench_Drop-Seq | PBMC | Drop-Seq | 19922 | 9 |
+| PbmcBench_inDrop | PBMC | inDrop | 17159 | 7 |
+| PbmcBench_Seq-Well | PBMC | Seq-Well | 21059 | 7 |
+| Baron Human | Human pancreas | inDrop | 17499 | 14 |
+| Muraro | Human pancreas | CEL-Seq2 | 18915 | 9 |
+| Segerstolpe | Human pancreas | SMART-Seq2 | 22757 | 13 |
+| Xin | Human pancreas | SMARTer | 33889 | 4 |
+| Adam | Mouse kidney | Drop-Seq | 23797 | 8 |
+| Baron Mouse | Mouse pancreas | inDrop | 14861 | 13 |
+| Klein | Mouse Embryonic Stem Cell | inDrop | 24047 | 4 |
+| Romanov | Mouse hypothalamus | Unknown | 21143 | 7 |
+| Quake_10x_Bladder | Mouse bladder | 10x Genomics | 16867 | 4 |
+| Quake_10x_Limb_Muscle | Mouse limb muscle | 10x Genomics | 16512 | 6 |
+| Quake_Smart-seq2_Diaphragm | Mouse diaphragm | SMART-Seq2 | 17973 | 5 |
+| Quake_Smart-seq2_Limb_Muscle | Mouse limb Muscle | SMART-Seq2 | 18320 | 6 |
+| Quake_Smart-seq2_Lung | Mouse lung | SMART-Seq2 | 19390 | 11 |
+| Quake_Smart-seq2_Trachea | Mouse trachea | SMART-Seq2 | 19992 | 4 |
+
+To identify new cells you need to do the following:
+1. Make sure all the requirements stated above are installed.
+2. Navigate to your working directory where the `.py` files are stored (e.g. src).
+3. Provide a set of query genes and their expression profiles (a sample is given in the **example** folder).
+4. Execute the following script:
+```
+from identify import Identify
+from h5 import h5_reader2
+from pathlib import Path
+import numpy as np
+
+path = The working directory (e.g. 'src')
+reference = A reference from the above table (e.g. 'Quake_10x_Bladder')
+query = The set of query genes (see the given sample 'query_genes.csv' in the **example** folder)
+values = The raw expression profiles (see the given sample 'query_values.csv' in the **example** folder)
+
+obj = Identify(reference, path)
+obj.predict_proba(query, values)
+obj.save_results()
+
+>>> OUTPUT:
+Downloading pre-trained encoders ...
+Unzipping ...
+Cross referencing 21143 query genes against 23341 reference genes ...
+1380 out of 21143 genes are not found in reference, hence 1380 genes removed from query.
+3578 out of 23341 genes in reference are not found in query, hence 3578 genes added to query with zero values.
+Obtaining probabilities for each cell-type ...
+```
+The script will first download the pretrained encoders for the selected reference. Then, it will cross reference the given query genes against the reference genes. After that, for each query cell a set of probabilities is obtained, where each probability is associated with a cell type in the selected reference. finally, those probabilities are saved in a CSV file (see `probabilities.csv` in the **example** folder).
 
 # Acknowledgements
 The authors acknowledge the academic research grants provided by Google Cloud. The authors also acknowledge the support by the Department of Computer Science and Information Systems and the Birkbeck GTA programme.
