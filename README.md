@@ -156,8 +156,8 @@ import numpy as np
 
 path = The working directory (e.g. 'src')
 reference = A reference from the above table (e.g. 'Quake_10x_Bladder')
-query = The set of query genes (see the given sample 'query_genes.csv' in the **example** folder)
-values = The raw expression profiles (see the given sample 'query_values.csv' in the **example** folder)
+query = The set of query genes (see the given sample 'query_genes.csv' in the example folder)
+values = The raw expression profiles (see the given sample 'query_values.csv' in the example folder)
 
 obj = Identify(reference, path)
 obj.predict_proba(query, values)
