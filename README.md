@@ -153,8 +153,8 @@ from identify import Identify
 
 path = The working directory (e.g. 'src')
 reference = A reference from the above table (e.g. 'Quake_10x_Bladder')
-query = The set of query genes (see the given sample 'query_genes.csv' in the Example folder)
-values = The raw expression profiles (see the given sample 'query_values.csv' in the Example folder)
+query = The set of query genes CSV file (see the given sample 'query_genes.csv' in the Example folder)
+values = The raw expression profiles CSV file (see the given sample 'query_values.csv' in the Example folder)
 
 obj = Identify(reference, path)
 obj.predict_proba(query, values)
