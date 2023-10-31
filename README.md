@@ -147,7 +147,8 @@ To identify new cells you need to do the following:
 1. Make sure all the requirements stated above are installed.
 2. Navigate to your working directory where the `.py` files are stored (e.g. src).
 3. Provide a set of query genes and their expression profiles (a sample is given in the **Example** folder).
-4. Execute the following script:
+4. Move the query genes and their expression profiles into the working directory (e.g. src/query_genes.csv and src/query_values.csv).
+5. Execute the following script:
 ```
 from identify import Identify
 
