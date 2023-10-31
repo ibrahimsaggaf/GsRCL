@@ -26,7 +26,7 @@ class Identify:
         '''
         Following the guidelines at https://developers.zenodo.org/
         '''
-        print('Downloading pre-trained encoders ...')
+        print('Downloading pretrained encoders ...')
         url = f'https://zenodo.org/api/records/{self.zenodo_id}/files/{self.zenodo_file}/content'
         r = requests.get(url, stream=True)
 
