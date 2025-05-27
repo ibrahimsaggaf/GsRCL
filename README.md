@@ -6,8 +6,13 @@ This is a Python implementation of the GsRCL method reported in:
   title={Improving cell type identification with Gaussian noise-augmented single-cell RNA-seq contrastive learning},
   author={Alsaggaf, Ibrahim and Buchan, Daniel and Wan, Cen},
   journal={Briefings in Functional Genomics},
-  pages={elad059},
-  year={2024},
+  volume = {23},
+  number = {4},
+  pages = {441-451},
+  year = {2024},
+  month = {01},
+  issn = {2041-2657},
+  doi = {10.1093/bfgp/elad059},
   publisher={Oxford University Press}
 }
 ```
